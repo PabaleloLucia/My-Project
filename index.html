@@ -9,6 +9,8 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+
     <link
       rel="stylesheet"
       href="https://kit.fontawesome.com/e25a05fa1c.css"
@@ -23,10 +25,10 @@
       <div class="wrapper">
         <div class="the-app">
           <div class="weather">
-            <h1>Gaborone</h1>
+            <h1 id="city"></h1>
             <ul>
               <li>Saturday 12:34</li>
-              <li>Clear</li>
+              <li id="description">Clear</li>
             </ul>
           </div>
           <div class="row">
@@ -38,16 +40,15 @@
                   class="float-left"
                 />
                 <div class="float-left">
-                  <strong>12</strong
+                  <strong id="temperature">12</strong
                   ><span class="weather-units">℃ | <a href="#"> ℉</a></span>
                 </div>
               </div>
             </div>
             <div class="col-6">
               <ul>
-                <li>Precipitation: 0%</li>
-                <li>Humidity: 60%</li>
-                <li>Wind: 2 km/h</li>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span>km/h</li>
               </ul>
             </div>
           </div>
