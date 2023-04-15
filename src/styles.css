@@ -1,0 +1,65 @@
+body {
+  font-family: arial, sans-serif;
+}
+
+h1 {
+  color: rgb(135, 135, 135);
+  font-size: 24px;
+  font-weight: 100;
+  line-height: 20px;
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: rgb(135, 135, 135);
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 19px;
+}
+a {
+  text-decoration: none;
+}
+
+.the-app {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #dadce0;
+  border-radius: 5px;
+}
+.wrapper {
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+.weather {
+  margin-bottom: 20px;
+}
+
+.temp img {
+  margin-right: 5px;
+  float: left;
+  height: 64px;
+  width: 64px;
+}
+
+.temp strong {
+  color: aquamarine;
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 400;
+  margin-right: 0;
+}
+.temp .weather-units {
+  position: relative;
+  font-size: 16px;
+  top: -34px;
+}

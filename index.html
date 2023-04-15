@@ -19,30 +19,39 @@
   </head>
 
   <body>
-    <div class="wrapper">
-      <div class="container">
-        <h1>Gaborone</h1>
-        <ul>
-          <li>Saturday 12:34</li>
-          <li>Clear</li>
-        </ul>
-        <div class="row">
-          <div class="col-6">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-              alt="Clear"
-            />
-            12℃ | ℉
-          </div>
-          <div class="col-6">
+    <div class="container">
+      <div class="wrapper">
+        <div class="the-app">
+          <div class="weather">
+            <h1>Gaborone</h1>
             <ul>
-              <li>Precipitation: 0%</li>
-              <li>Humidity: 60%</li>
-              <li>Wind: 2 km/h</li>
+              <li>Saturday 12:34</li>
+              <li>Clear</li>
             </ul>
           </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="clearfix temp">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                  alt="Clear"
+                  class="float-left"
+                />
+                <div class="float-left">
+                  <strong>12</strong
+                  ><span class="weather-units">℃ | <a href="#"> ℉</a></span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>Precipitation: 0%</li>
+                <li>Humidity: 60%</li>
+                <li>Wind: 2 km/h</li>
+              </ul>
+            </div>
+          </div>
         </div>
-
         <small>
           <a
             href="https://github.com/PabaleloLucia/My-Project.git"
@@ -52,7 +61,7 @@
           by Pabalelo Tsebempe
         </small>
       </div>
-      <script src="src/index.js"></script>
     </div>
+    <script src="src/index.js"></script>
   </body>
 </html>
