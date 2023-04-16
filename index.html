@@ -53,6 +53,15 @@
                 class="btn btn-outline-secondary w-100"
               />
             </div>
+            <div class="col-12">
+              <input
+                class="container_toggle"
+                type="checkbox"
+                id="switch"
+                name="mode"
+              />
+              <label for="switch">Toggle</label>
+            </div>
           </form>
 
           <div class="weather">
@@ -69,8 +78,10 @@
                 <div class="float-left">
                   <strong id="temperature"></strong
                   ><span class="weather-units"
-                    ><a href="#" class="focus" id="key2">℃</a> |
-                    <a href="#" class="pointer" id="key"> ℉</a></span
+                    ><a href="#" tabindex="1" class="focus" id="key2">℃</a> |
+                    <a href="#" tabindex="1" class="pointer" id="key">
+                      ℉</a
+                    ></span
                   >
                 </div>
               </div>
