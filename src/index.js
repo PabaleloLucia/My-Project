@@ -45,9 +45,18 @@ function showTemperature(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+function searchCity(city) {
+  let apiKey = "44901ff0e09df2c286ef98d3d56d16ff";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-let apiKey = "44901ff0e09df2c286ef98d3d56d16ff";
-let city = "Gaborone";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
+}
 
-axios.get(apiUrl).then(showTemperature);
+function makeSubmission(event) {
+  event.preventDefault();
+  let inputCityElement = document.querySelector("#cityWeatherForecast");
+  searchCity(inputCityElement.value);
+}
+
+let form = document.querySelector("#city-form");
+form.addEventListener("submit", makeSubmission);
