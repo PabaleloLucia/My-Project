@@ -33,7 +33,9 @@ function showTemperature(response) {
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
 
-  tempElement.innerHTML = Math.round(response.data.main.temp);
+  celciusTemp = response.data.main.temp;
+
+  tempElement.innerHTML = Math.round(celciusTemp);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = Math.round(response.data.main.humidity);
@@ -58,5 +60,29 @@ function makeSubmission(event) {
   searchCity(inputCityElement.value);
 }
 
+function showFahrenheit(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#temperature");
+
+  let fahrenheitTemp = (celciusTemp * 9) / 5 + 32;
+  tempElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function showCelcius(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#temperature");
+  tempElement.innerHTML = Math.round(celciusTemp);
+}
+
+let celciusTemp = null;
+
 let form = document.querySelector("#city-form");
 form.addEventListener("submit", makeSubmission);
+
+let fahrenheit = document.querySelector("#key");
+fahrenheit.addEventListener("click", showFahrenheit);
+
+let celcius = document.querySelector("#key2");
+celcius.addEventListener("click", showCelcius);
+
+searchCity("Gaborone");

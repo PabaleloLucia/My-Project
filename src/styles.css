@@ -71,3 +71,13 @@ a:hover {
   font-size: 16px;
   top: -34px;
 }
+
+.temp .focus {
+  cursor: default;
+  text-decoration: none;
+}
+
+.temp .pointer {
+  cursor: default;
+  text-decoration: none;
+}
