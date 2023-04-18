@@ -43,6 +43,34 @@ function actualDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function showForecast() {
+  let weatherForecastEmelent = document.querySelector("#weather-forecast");
+
+  let htmlForecast = `<div class="row">`;
+  let weekDays = ["Wed", "Thu", "Fri", "Sat", "Sun"];
+  weekDays.forEach(function (day) {
+    htmlForecast =
+      htmlForecast +
+      `
+  <div class="col-2">
+    <div class="app-forecast-date">${day}</div>
+    <img
+      src="http://openweathermap.org/img/wn/50d@2x.png"
+      alt=""
+      width="45"
+    />
+    <div class="app-forecast-temp">
+      <span class="app-forecast-temperature-first"> 18° </span>
+      <span class="app-forecast-temperature-last"> 12° </span>
+    </div>
+  </div>
+`;
+  });
+
+  htmlForecast = htmlForecast + `</div>`;
+  weatherForecastEmelent.innerHTML = htmlForecast;
+}
+
 function showTemperature(response) {
   let tempElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -105,3 +133,4 @@ let celcius = document.querySelector("#key2");
 celcius.addEventListener("click", showCelcius);
 
 searchCity("Gaborone");
+showForecast();
