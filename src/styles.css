@@ -174,3 +174,20 @@ a:hover {
   color: rgb(255, 0, 0);
   outline: none;
 }
+
+.app-forecast {
+  margin-top: 20px;
+  text-align: center;
+  color: black;
+}
+
+.app-forecast-date {
+  font-size: 16px;
+  opacity: 0.5;
+}
+.app-forecast-temperature-last {
+  opacity: 0.5;
+}
+.app-forecast-temp {
+  font-size: 13px;
+}
