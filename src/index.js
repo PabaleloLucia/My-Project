@@ -1,21 +1,8 @@
-let checkbox = document.querySelector("input[name=mode]");
+let theme_toggler = document.querySelector("#theme_toggler");
 
-checkbox.addEventListener("change", function () {
-  if (this.checked) {
-    trans();
-    document.documentElement.setAttribute("data-theme", "dark");
-  } else {
-    trans();
-    document.documentElement.setAttribute("data-theme", "light");
-  }
+theme_toggler.addEventListener("click", function () {
+  document.body.classList.toggle("dark_mode");
 });
-
-let trans = () => {
-  document.documentElement.classList.add("transition");
-  window.setTimeout(() => {
-    document.documentElement.classList.remove("transition");
-  }, 1000);
-};
 
 function actualDate(timestamp) {
   let date = new Date(timestamp);
