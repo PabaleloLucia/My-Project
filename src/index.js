@@ -52,8 +52,6 @@ function actualDay(dateTime) {
 }
 
 function showForecast(response) {
-  console.log(response.data.daily);
-
   let arrayForecast = response.data.daily;
 
   let weatherForecastEmelent = document.querySelector("#weather-forecast");
@@ -90,10 +88,9 @@ function showForecast(response) {
   weatherForecastEmelent.innerHTML = htmlForecast;
 }
 function retriveForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "b44b3b21bbcdc2007ba9f404ao7et12a";
   let apiLink = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=${apiKey}&units=metric`;
-  console.log(apiLink);
+
   axios.get(apiLink).then(showForecast);
 }
 
@@ -134,6 +131,17 @@ function makeSubmission(event) {
   let inputCityElement = document.querySelector("#cityWeatherForecast");
   searchCity(inputCityElement.value);
 }
+function searchLocation(position) {
+  let apiKey = "548d49c1c558397f60419672a958837";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(showTemperature);
+}
+
+function getNowLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
 
 function showFahrenheit(event) {
   event.preventDefault();
@@ -153,6 +161,9 @@ let celciusTemp = null;
 
 let form = document.querySelector("#city-form");
 form.addEventListener("submit", makeSubmission);
+
+let currentLocationSubmit = document.querySelector("#current-location");
+currentLocationSubmit.addEventListener("click", getNowLocation);
 
 let fahrenheit = document.querySelector("#key");
 fahrenheit.addEventListener("click", showFahrenheit);
