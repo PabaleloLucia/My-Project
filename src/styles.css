@@ -1,16 +1,22 @@
 :root {
   --body-bg: #f5f5f5;
   --card-bg: #e0e0e0;
+  --container-bg: #e0e0e0;
+  --the-app-bg: #e0e0e0;
   --card-bd-col: #bdbdbd;
+  --container-bd-col: #bdbdbd;
   --text-color: #252525;
 }
 .dark_mode {
   --body-bg: #252525;
   --card-bg: #555;
-
+  --container-bg: #555;
+  --the-app-bg: #555;
   --card-bd-col: #212121;
+  --container-bd-col: #212121;
   --text-color: #f5f5f5;
 }
+
 body {
   margin: 0;
   background: var(--body-bg);
@@ -29,6 +35,15 @@ body {
 .card > body {
   color: var(--text-color);
 }
+.container {
+  background: var(--card-bg);
+  box-shadow: 5px 5px 10px -3px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--card-bd-col);
+}
+.container > body {
+  color: var(--text-color);
+}
+
 #theme_toggler {
   position: absolute;
   bottom: 5%;
@@ -67,6 +82,7 @@ li:first-letter {
 }
 a {
   text-decoration: none;
+  color: blueviolet;
 }
 
 a:hover {
@@ -84,7 +100,10 @@ small {
   border: 1px solid #dadce0;
   border-radius: 5px;
   background: #d9f6fe;
+  color: var(--text-color);
+  background: var(--container-bg);
 }
+
 .wrapper {
   max-width: 600px;
   margin: 40px auto;
