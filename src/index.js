@@ -126,8 +126,16 @@ function searchLocation(position) {
 }
 
 function getNowLocation(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(searchLocation);
+  //event.preventDefault();
+
+  let apiKey = "b44b3b21bbcdc2007ba9f404ao7et12a";
+  let apiUrl = ` https://api.shecodes.io/weather/v1/current?query=${event}&key=${apiKey}&units=metric`;
+
+  axios
+    .get(apiUrl)
+    .then(
+      alert(`Your current location is represented by the city name below😄`)
+    );
 }
 
 function showFahrenheit(event) {
