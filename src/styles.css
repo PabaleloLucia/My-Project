@@ -26,34 +26,6 @@ body {
   height: 100vh;
   font-family: arial, sans-serif;
 }
-.card {
-  background: var(--container-bg);
-  box-shadow: 5px 5px 10px -3px rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--card-bd-col);
-}
-
-.card > body {
-  color: var(--text-color);
-}
-.container {
-  background: var(--card-bg);
-  box-shadow: 5px 5px 10px -3px rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--card-bd-col);
-}
-.container > body {
-  color: var(--text-color);
-}
-
-#theme_toggler {
-  position: absolute;
-  bottom: 5%;
-  right: 5%;
-  background: #0096c3;
-  padding: 20px;
-  border-radius: 30px;
-  color: #fff;
-  cursor: pointer;
-}
 
 h1 {
   color: rgb(135, 135, 135);
@@ -92,6 +64,34 @@ a:hover {
 small {
   color: var(--text-color);
 }
+.card {
+  background: var(--container-bg);
+  box-shadow: 5px 5px 10px -3px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--card-bd-col);
+}
+
+.card > body {
+  color: var(--text-color);
+}
+.container {
+  background: var(--card-bg);
+  box-shadow: 5px 5px 10px -3px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--card-bd-col);
+}
+.container > body {
+  color: var(--text-color);
+}
+
+#theme_toggler {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  background: #0096c3;
+  padding: 20px;
+  border-radius: 30px;
+  color: #fff;
+  cursor: pointer;
+}
 
 .the-app {
   max-width: 600px;
@@ -121,7 +121,7 @@ small {
 }
 
 .temp strong {
-  color: aquamarine;
+  color: blueviolet;
   font-size: 64px;
   line-height: 1;
   font-weight: 400;

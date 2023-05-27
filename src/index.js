@@ -82,29 +82,34 @@ function retriveForecast(coordinates) {
 }
 
 function showTemperature(response) {
-  let tempElement = document.querySelector("#temperature");
-  let cityElement = document.querySelector("#city");
-  let descriptionElement = document.querySelector("#description");
-  let humidityElement = document.querySelector("#humidity");
-  let windElement = document.querySelector("#wind");
-  let dateElement = document.querySelector("#date");
-  let iconElement = document.querySelector("#icon");
+  if (response.data.message !== "City not found") {
+    let h1 = document.querySelector("h1");
+    h1.innerHTML = response.data.city;
 
-  celciusTemp = response.data.temperature.current;
+    let tempElement = document.querySelector("#temperature");
+    let cityElement = document.querySelector("#city");
+    let descriptionElement = document.querySelector("#description");
+    let humidityElement = document.querySelector("#humidity");
+    let windElement = document.querySelector("#wind");
+    let dateElement = document.querySelector("#date");
+    let iconElement = document.querySelector("#icon");
 
-  tempElement.innerHTML = Math.round(celciusTemp);
-  cityElement.innerHTML = response.data.city;
-  descriptionElement.innerHTML = response.data.condition.description;
-  humidityElement.innerHTML = Math.round(response.data.temperature.humidity);
-  windElement.innerHTML = Math.round(response.data.wind.speed);
-  dateElement.innerHTML = actualDate(response.data.time * 1000);
-  iconElement.setAttribute(
-    "src",
-    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
-  );
-  iconElement.setAttribute("alt", response.data.condition.description);
+    celciusTemp = response.data.temperature.current;
 
-  retriveForecast(response.data.coordinates);
+    tempElement.innerHTML = Math.round(celciusTemp);
+    cityElement.innerHTML = response.data.city;
+    descriptionElement.innerHTML = response.data.condition.description;
+    humidityElement.innerHTML = Math.round(response.data.temperature.humidity);
+    windElement.innerHTML = Math.round(response.data.wind.speed);
+    dateElement.innerHTML = actualDate(response.data.time * 1000);
+    iconElement.setAttribute(
+      "src",
+      `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+    );
+    iconElement.setAttribute("alt", response.data.condition.description);
+
+    retriveForecast(response.data.coordinates);
+  }
 }
 function searchCity(city) {
   let apiKey = "b44b3b21bbcdc2007ba9f404ao7et12a";
@@ -126,16 +131,8 @@ function searchLocation(position) {
 }
 
 function getNowLocation(event) {
-  //event.preventDefault();
-
-  let apiKey = "b44b3b21bbcdc2007ba9f404ao7et12a";
-  let apiUrl = ` https://api.shecodes.io/weather/v1/current?query=${event}&key=${apiKey}&units=metric`;
-
-  axios
-    .get(apiUrl)
-    .then(
-      alert(`Your current location is represented by the city name below😄`)
-    );
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
 function showFahrenheit(event) {
